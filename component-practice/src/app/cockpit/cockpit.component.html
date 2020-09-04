@@ -1,20 +1,21 @@
 <div class="row">
-    <div class="colxs-12">
+    <div class="col-xs-12">
         <p>Add New Server or Blueprint</p>
         <label for="servername">Server Name</label>
-        <input type="text" id="servername" class="form-control" [(ngModel)]="newServerName">
-
+        <!-- <input type="text" id="servername" class="form-control" [(ngModel)]="newServerName"> -->
+        <input type="text" id="servername" class="form-control" #newServerNameInput>
+        <!-- We will access server name  just via Template Ref Variable and server content via view child so that we understand both the ways. 
+        We can eith use only template ref Or view child for both aslo-->
         <label for="servercontent">Server Content</label>
-        <input type="text" id="servercontent" class="form-control" [(ngModel)]="newServerContent">
-
+        <!-- <input type="text" id="servercontent" class="form-control" [(ngModel)]="newServerContent"> -->
+        <input type="text" id="servercontent" class="form-control" #newServerContentInput>
+        <!-- We will access server name  just via Template Ref Variable and server content via view child so that we understand both the ways. 
+        We can eith use only template ref Or view child for both aslo-->
         <br>
-        <button class="btn btn-primary" (click)="onAddServerHandler()">Add Server</button>
-        <button class="btn btn-primary" (click)="onAddBlueprintHandler()">Add Blueprint</button>
-    </div>
-</div>
-
-<div class="row">
-    <div class="colxs-12">
-
+        <button class="btn btn-primary" (click)="onAddServerHandler(newServerNameInput)">Add
+            Server</button>
+        <!-- <button class="btn btn-primary" (click)="onAddBlueprintHandler()">Add Blueprint</button> -->
+        <button class="btn btn-primary" (click)="onAddBlueprintHandler(newServerNameInput)">Add
+            Blueprint</button>
     </div>
 </div>
